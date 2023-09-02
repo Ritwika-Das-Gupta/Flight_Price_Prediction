@@ -1,5 +1,5 @@
 # Flight_Price_Prediction
-In this project we a re considering a data set to predict flight prices using Decision Tree model
+In this project we a re considering a data set to predict flight prices using Decision Tree model.
 Flight price prediction is a data science and machine learning application aimed at forecasting the cost of airline tickets. This type of prediction is valuable for travelers, travel agencies, and airlines, as it can help travelers find the best deals, assist travel agencies in setting prices, and enable airlines to optimize revenue management. Here's a description of the key components and steps involved in flight price prediction:
 
 **1. Data Collection:**

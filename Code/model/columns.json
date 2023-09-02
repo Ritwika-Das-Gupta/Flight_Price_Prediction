@@ -1,0 +1,9 @@
+{"data_columns": ["days_left", "airasia", "air_india", "go_first", 
+"indigo", "spicejet", "afternoon", "early_morning", "evening", 
+"late_night", "morning", 
+"bangalore", "chennai", 
+"delhi", "hyderabad", "kolkata",
+ "bangalore_d", "chennai_d", "delhi_d", 
+ "hyderabad_d", "kolkata_d", "one", "two_or_more", 
+ "ar_afternoon", "ar_early_morning", "ar_evening", 
+ "ar_late_night", "ar_morning", "business"]}

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Banglore Home Price Prediction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<!-- <div class="img"> -->
+<form class="form" id="form" method="POST" onsubmit=onClickedEstimatePrice()>
+  
+  <!-- Form validation so that the required works -->
+  <script>
+        //Get form element
+    var form=document.getElementById("form");
+    function submitForm(event){
+      //Preventing page refresh
+      event.preventDefault();
+      // const sourceSelect = document.getElementById("source");
+      // const destSelect = document.getElementById("dest");
+      // const selectedSource = sourceSelect.value;
+      // const selectedDest = destSelect.value;
+
+      //           if (selectedSource === selectedDest) {
+      //               event.preventDefault(); // Prevent form submission
+      //               alert("Source and destination cannot be the same.");
+      //               sourceSelect.value = ""; // Clear source selection
+      //               destSelect.value = "";   // Clear destination selection
+      //               updateOptions(); 
+    }
+    //Calling a function during form submission.
+    form.addEventListener('submit', submitForm);
+  </script>
+
+	<h2>Airline</h2>
+    <select name="airline" id="airline" class="airline" required>
+        <option selected value="" >Choose Airline</option>
+        <option value="SpiceJet">SpiceJet</option>
+        <option value="Air_India">Air India</option>
+        <option value="AirAsia">Air Asia</option>
+        <option value="GO_FIRST">GO FIRST</option>
+        <option value="Indigo">Indigo</option>
+        <option value="Vistara">Vistara</option>
+   </select>
+	<h2>Source City</h2>
+	<select name="source" id="source" class="airline"  required >
+        <option selected value="" >Choose Source City</option>
+        <option value="bangalore">Bangalore</option>
+        <option value="chennai">Chennai</option>
+        <option value="delhi">Delhi</option>
+        <option value="hyderabad">Hyderabad</option>
+        <option value="kolkata">Kolkata</option>
+        <option value="mumbai">Mumbai</option>
+   </select>
+   <h2>Destination City</h2>
+   <select name="dest" id="dest" class="airline"   required>
+    <option selected value="" >Choose Destination City</option>
+    <option value="bangalore_d">Bangalore</option>
+    <option value="chennai_d">Chennai</option>
+    <option value="delhi_d">Delhi</option>
+    <option value="hyderabad_d">Hyderabad</option>
+    <option value="kolkata_d">Kolkata</option>
+    <option value="mumbai_d">Mumbai</option>
+  </select>
+  <h2>Departure Time</h2>
+  <select name="dept" id="dept" class="airline" required>
+    <option selected value="" >Choose Departure Time</Source></option>
+    <option value="morning">Morning</option>
+    <option value="early_morning">Early Morning</option>
+    <option value="Afternoon">Afternoon</option>
+    <option value="evening">Evening</option>
+    <option value="night">Night</option>
+    <option value="late_night">Late Night</option>
+  </select>
+  <h2>Arrival Time</h2>
+  <select name="arrv" id="arrv" class="airline">
+    <option selected value="" >Choose arrival Time</Source></option>
+    <option value="ar_morning">Morning</option>
+    <option value="ar_early_morning">Early Morning</option>
+    <option value="ar_Afternoon">Afternoon</option>
+    <option value="ar_evening">Evening</option>
+    <option value="ar_night">Night</option>
+    <option value="ar_late_night">Late Night</option>
+  </select>
+
+  <h2>Number of Stops</h2>
+  <div class="switch-field">
+    <input type="radio" id="stop0" name="stop" value="zero" />
+    <label for="stop0">0</label>
+    <input type="radio" id="stop1" name="stop" value="one" required/>
+    <label for="stop1">1</label>
+    <input type="radio" id="stop2" name="stop" value="two_or_more" />
+    <label for="stop2">2 or More</label>
+</div>
+<h2>Select Class</h2>
+<div class="switch-field">
+  <input type="radio" id="eco" name="classes" value="economy"/>
+  <label for="eco">Economy</label>
+  <input type="radio" id="bussi" name="classes" value="Business" required/>
+  <label for="bussi">Business</label>
+</div>
+<h2>Select Date of travel</h2>
+<input type="date" id="travelDate" required >
+<input type="hidden" id="inpt" name="inpt" required>
+<p id="daysRemaining"></p>
+<p id="daysRemainingP"></p>
+    
+    <script>
+
+        // Get the current date
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate()+1)
+        currentDate.setHours(0, 0, 0, 0); // Set time to midnight
+        
+        // Set the minimum date for the input field
+        const dateInput = document.getElementById('travelDate');
+        dateInput.min = currentDate.toISOString().split('T')[0];
+        const inpt = document.getElementById('inpt');
+        const daysRemainingP= document.getElementById('daysRemainingP');
+        
+        // Calculate and display the number of days remaining
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            selectedDate.setHours(0, 0, 0, 0); // Set time to midnight
+            const timeDifference = selectedDate.getTime() - currentDate.getTime();
+            const daysRemaining = Math.ceil(timeDifference / (1000 * 3600 * 24))+1;
+            const daysRemainingElement = document.getElementById('daysRemaining');
+            daysRemaining > 0
+                // daysRemainingElement.textContent = `Days remaining until travel: ${daysRemaining}`;
+                inpt.value = daysRemaining; // Set the input's value
+                daysRemainingP.textContent = `Days remaining until travel: ${inpt.value}`;
+        });
+    </script>
+
+<button  class="submit" type="submit" >Estimate Price</button>
+
+<div id="uiEstimatedPrice" class="result"></div>
+</form>
+
+</body>
+</html>

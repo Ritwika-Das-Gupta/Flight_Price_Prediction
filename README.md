@@ -66,7 +66,7 @@ The "columns.json" file contains a list of column names used for encoding catego
 The code can be further extended and improved by exploring additional regression algorithms and feature engineering techniques.
 
 # Contributions:
-Ritwika Das Gupta
+Ritwika Das Gupta,
 Soham Chatterjee
 
 Contributions and improvements to this project are welcome. Feel free to fork the repository and submit pull requests.

@@ -1,40 +1,74 @@
-# Flight_Price_Prediction
-In this project we a re considering a data set to predict flight prices using Decision Tree model.
-Flight price prediction is a data science and machine learning application aimed at forecasting the cost of airline tickets. This type of prediction is valuable for travelers, travel agencies, and airlines, as it can help travelers find the best deals, assist travel agencies in setting prices, and enable airlines to optimize revenue management. Here's a description of the key components and steps involved in flight price prediction:
+# Flight-Price-Prediction
+"Flight Price Prediction: GitHub repo for ML-based airline ticket price forecasting. Collect, preprocess data, train models, deploy, and evaluate. Open-source under MIT License."
 
-**1. Data Collection:**
-   - Gathering historical flight pricing data is the foundation of flight price prediction. This data includes information on flight routes, departure and arrival cities, dates, airlines, ticket prices, booking class, time until departure, and more.
+Python Codes Contains Files 1. flight.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
 
-**2. Data Preprocessing:**
-   - Data cleaning and preprocessing are essential to handle missing values, outliers, and inconsistencies in the dataset.
-   - Feature engineering may be performed to create new variables or transform existing ones.
-   - 
-**3. Exploratory Data Analysis (EDA):**
-   - EDA is conducted to gain insights into the dataset, identify patterns, and understand the relationships between different variables. Visualization techniques are often used to explore the data.
+KAGGLE LINK FOR VIEWING THE CODE ALONG WITH ITS ENTIRE OUTPUT: https://www.kaggle.com/code/sohamchatterjeef/flight-price-forecaster?scriptVersionId=141777246
 
-**4. Model Selection:**
-   - Machine learning models are chosen based on the nature of the problem. Common choices include regression models (e.g., linear regression), time series models , decision tree, and more advanced techniques like random forests, gradient boosting, or neural networks. Here decision tree is used to predict price as it had highest accuracy during cross validataion
-   - Some models are specifically designed for time series forecasting, which is common in flight price prediction due to the temporal nature of ticket prices.
+1.png and ui.png contains sample screenshots of the api
 
-**5. Model Training:**
-   - The historical flight pricing data is split into training and validation sets for model training and evaluation.
-   - Features derived from historical flight and external data are used to predict ticket prices.
+# Steps for opening the api through python flask in local server
+### Step 1: 
+Download the folder named "Code"
+### Step 2:
+Run Command Prompt in the Code folder, and run the following command "python server.py"
+### Step 3:
+Go to the folder named "Client" inside the "Code" folder and click on "app.html" to preview the api on your local host server.
 
-**6. Model Evaluation:**
-   - The model's performance is assessed using appropriate metrics such as Mean Absolute Error (MAE), Root Mean Square Error (RMSE), or others relevant to regression tasks.
-   - Cross-validation may be used to ensure the model generalizes well to unseen data.
+# Title: Flight Price Prediction Model - Flight Fare-Caster
 
-**7. Deployment:**
-   - Once a satisfactory model is trained, it can be deployed as part of a web application, API, or integrated into travel booking websites and apps for real-time price predictions.
+# Description:
 
-**8. Real-Time Prediction:**
-   - In a production environment, the model receives real-time inputs, such as the user's travel preferences (e.g., destination, departure date, class of service), and returns price predictions for specific flights.
+This GitHub repository contains a Python script for building a flight price prediction model using machine learning. The model predicts flight prices based on various input features, such as airline, source city, departure time, stops, arrival time, destination city, and class.
 
-**9. Continuous Monitoring and Retraining:**
-    - The model's performance should be continuously monitored in production to ensure it remains accurate and up-to-date.
-    - Regularly retraining the model with new pricing data is important to account for changing pricing patterns and improving prediction accuracy.
+# Project Overview:
 
-**10. User Interface:**
-    - A user-friendly interface, such as a travel booking website or app, can provide travelers with real-time flight price predictions and help them find the best deals.
+# Data Preprocessing:
 
-Flight price prediction systems empower travelers to make informed decisions about booking flights, enable travel agencies to offer competitive pricing, and assist airlines in optimizing revenue by dynamically adjusting ticket prices. These systems rely on historical data, sophisticated modeling techniques, and continuous monitoring to provide accurate and valuable predictions.
+The dataset is loaded from a CSV file named "flight.csv" using the Pandas library.
+Unnecessary columns, including "Unnamed: 0" and "flight," are dropped from the DataFrame.
+Descriptive statistics, such as mean, standard deviation, and more, are calculated for the "price" column.
+
+# Outlier Detection and Removal:
+
+Outliers in the data are detected and removed to improve model accuracy. The removal is performed for different subgroups based on categorical features like "airline" and "class."
+
+# Data Encoding:
+Categorical variables are encoded into numerical form using one-hot encoding. This step involves creating dummy variables for features like airline, source city, destination city, departure time, stops, and class.
+# Model Building:
+The data is split into training and testing sets using the train-test split method.
+A Linear Regression model is created and trained on the training data.
+The model's performance is evaluated using the R-squared score and K-fold cross-validation.
+
+# Grid Search for Model Selection:
+
+Grid search is performed to find the best regression model among Linear Regression, Lasso, and Decision Tree Regressor. Various hyperparameters are tuned to optimize model performance.
+
+# Price Prediction:
+
+### The Decision Tree Regressor model is selected as the best model and used to predict flight prices.
+A function is defined to take input features (e.g., airline, source city, etc.) and predict the flight price.
+
+# Model Evaluation:
+
+Model performance is evaluated using metrics such as Mean Squared Error (MSE) and Mean Absolute Percentage Error (MAPE).
+
+# Model Persistence:
+
+The trained Decision Tree Regressor model is saved to a pickle file for future use.
+Column names used for encoding are saved to a JSON file for reference.
+
+# Usage:
+
+You can use the saved model for flight price predictions by providing input features.
+The "columns.json" file contains a list of column names used for encoding categorical variables.
+
+# Note:
+
+The code can be further extended and improved by exploring additional regression algorithms and feature engineering techniques.
+
+# Contributions:
+Ritwika Das Gupta
+Soham Chatterjee
+
+Contributions and improvements to this project are welcome. Feel free to fork the repository and submit pull requests.

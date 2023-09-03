@@ -1,11 +1,9 @@
 # Flight-Price-Prediction
 "Flight Price Prediction: GitHub repo for ML-based airline ticket price forecasting. Collect, preprocess data, train models, deploy, and evaluate. Open-source under MIT License."
 
-Python Codes Contains Files 1. flight.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
+model and EDA Contains Files 1. fligh_prediction.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
 
 KAGGLE LINK FOR VIEWING THE CODE ALONG WITH ITS ENTIRE OUTPUT: https://www.kaggle.com/code/sohamchatterjeef/flight-price-forecaster?scriptVersionId=141777246
-
-1.png and ui.png contains sample screenshots of the api
 
 # Steps for opening the api through python flask in local server
 ### Step 1: 
@@ -13,7 +11,7 @@ Download the folder named "Code"
 ### Step 2:
 Run Command Prompt in the Code folder, and run the following command "python server.py"
 ### Step 3:
-Go to the folder named "Client" inside the "Code" folder and click on "app.html" to preview the api on your local host server.
+Go to the folder named "client" inside the "Code" folder and click on "app.html" to preview the api on your local host server.
 
 # Title: Flight Price Prediction Model - Flight Fare-Caster
 

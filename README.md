@@ -3,7 +3,7 @@
 
 model and EDA Contains Files 1. fligh_prediction.ipynb for modeling code 2. eda_flight.ipynb for exploratory data analysis
 
-KAGGLE LINK FOR VIEWING THE CODE ALONG WITH ITS ENTIRE OUTPUT: https://www.kaggle.com/code/sohamchatterjeef/flight-price-forecaster?scriptVersionId=141777246
+KAGGLE LINK FOR VIEWING THE CODE ALONG WITH ITS ENTIRE OUTPUT: [https://www.kaggle.com/code/sohamchatterjeef/flight-price-forecaster?scriptVersionId=141777246](https://www.kaggle.com/code/ritwika03/flight-price-fare-caster/notebook?scriptVersionId=141790187)
 
 # Steps for opening the api through python flask in local server
 ### Step 1: 
